@@ -319,7 +319,7 @@ module NewRelic
     def check_for_rainbows
       if (defined?(::Rainbows) && defined?(::Rainbows::HttpServer)) && working_jruby?
         v = find_class_in_object_space(::Rainbows::HttpServer)
-        @dispatcher = :rainbows if v
+        @discovered_dispatcher = :rainbows if v
       end
     end
 
